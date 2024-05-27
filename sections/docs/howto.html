@@ -1,0 +1,85 @@
+<div class="container mt-5 row offset-1 col-10">
+<h1 class="mb-4 text-center">How to create sections using group recursive methodology</h1>
+<p>The <code>sections</code> array is a group data structure that contains information about the sections and subsections of the web application. It is used to generate the left menu bar of the application, and to load the content of the sections when the user clicks on them.</p>
+<p>The <code>sections</code> array contains two types of elements: <code>section</code> and <code>group</code>.</p>
+<table class="table">
+<thead>
+<tr>
+<th class="text-center align-middle">Key</th>
+<th class="text-center align-middle">Value</th>
+<th class="text-center align-middle">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center align-middle"><code>type</code></td>
+<td class="text-center align-middle"><code>section</code> or <code>group</code></td>
+<td class="text-center align-middle">The type of element. If it's <code>section</code>, it represents a leaf node in the group. If it's <code>group</code>, it represents a branch node.</td>
+</tr>
+<tr>
+<td class="text-center align-middle"><code>section_id</code></td>
+<td class="text-center align-middle">Unique ID</td>
+<td class="text-center align-middle">Unique ID of the section (only applys if type=<code>section</code>).</td>
+</tr>
+<tr>
+<td class="text-center align-middle"><code>group_id</code></td>
+<td class="text-center align-middle">Unique ID</td>
+<td class="text-center align-middle">Unique ID of the group (only applys if type=<code>group</code>).</td>
+</tr>
+<tr>
+<td class="text-center align-middle"><code>label</code></td>
+<td class="text-center align-middle">String</td>
+<td class="text-center align-middle">The label of the section or group. It's used to display the name of the section group in the left menu bar.</td>
+</tr>
+<tr>
+<td class="text-center align-middle"><code>url</code></td>
+<td class="text-center align-middle">String (URL)</td>
+<td class="text-center align-middle">The URL of the section. It's used to load the content of the section when the user clicks on it in the left menu bar. The URL should be relative to the <code>sections/</code> directory of the web application (only applys if type=<code>section</code>).</td>
+</tr>
+<tr>
+<td class="text-center align-middle"><code>group</code></td>
+<td class="text-center align-middle">An array of section/group elements</td>
+<td class="text-center align-middle">Only present if the type=<code>group</code>. It contains the sub-groups of the current group.</td>
+</tr>
+</tbody>
+</table>
+<h4 class="text-center">Here is an example of how to define a section with a sub-section:</h4>
+<pre><code>[
+    {
+        "type": "group",
+        "group_id":"group1",
+        "label": "Group 1",
+        "group": [
+            {
+                "type": "section",
+                "section_id":"subsection1",
+                "label": "Sub-section 1",
+                "url": "sections/group1/subsection1.html"
+            },
+            {
+                "type": "section",
+                "section_id":"subsection2",
+                "label": "Sub-section 2",
+                "url": "sections/group1/subsection2.html"
+            }
+        ]
+    }
+]</code></pre>
+<p>To create a new section or sub-section, simply add a new object to the <code>sections</code> array with the appropriate properties. If it's a leaf node, set the <code>type</code> property to <code>section</code> and include the <code>label</code> and <code>url</code> properties. If it's a branch node, set the <code>type</code> property to <code>group</code> and include the <code>label</code> and <code>group</code> properties, where the <code>group</code> property is an array of section elements.</p>
+<p>Once the <code>sections</code> array is defined, you can use it to generate the left menu bar of the web application by iterating over the array and creating HTML elements for each section and sub-section.</p>
+<h4 class="text-center">Good Practices</h4>
+<h5>The following are some good practices to consider when working with the code:</h5>
+<p>&bull; Use semantic and meaningful HTML tags to structure the content, and apply CSS styles appropriately to achieve the desired look and feel.</p>
+<p>&bull; Leverage existing libraries included, such as Bootstrap, Font Awesome, and Highlight.js, to enhance the functionality and appearance of your documentation.</p>
+<p>&bull; Document the code using meaningful comments and clear explanations.</p>
+<h4 class="text-center">Dummy Template</h4>
+<p>You can use this dummy code as a starting point for your sections:</p>
+<pre><code class="language-html">&lt;!--Libraries: Bootstrap, Font Awesome, and Highlight.js are already included in the code--&gt;
+&lt;div class="container mt-5 row offset-1 col-10"&gt;
+&lt;h1 class="mb-4 text-center"&gt;&lt;!--title section here--&gt;&lt;/h1&gt;
+&lt;!--Add your section content here, such as tables or pre code snippets--&gt;
+&lt;/div&gt;</code></pre>
+<p>
+This code includes the libraries Bootstrap, Font Awesome, and Highlight.js, so you don't need to import them again. You can replace the section title and content as needed.
+</p>
+</div>

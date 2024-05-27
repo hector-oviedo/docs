@@ -1,0 +1,60 @@
+<div class="container mt-5 row offset-1 col-10">
+<h1 class="mb-4 text-center">Future Developments</h1>
+<p>In the future, we plan to implement an automatic testing system to verify the format of the sections.js file and check all the sections folders to ensure that all HTML files are present and not broken.</p>
+<p>We also plan to implement a workaround to avoid CORS issues when loading external resources such as images or videos.</p>
+<table class="table">
+<thead>
+<tr>
+<th class="text-center align-middle">Task</th>
+<th class="text-center align-middle">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center align-middle">Add an indicator of the actual section in the left menu</td>
+<td class="text-center align-middle">Not started</td>
+</tr>
+<tr>
+<td class="text-center align-middle">CORS workaround for loading external resources</td>
+<td class="text-center align-middle">Not started</td>
+</tr>
+</tbody>
+</table>
+<h1 class="mb-4 text-center">Dependencies</h1>
+<table class="table">
+<thead>
+<tr>
+<th class="text-center align-middle">Name</th>
+<th class="text-center align-middle">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-center align-middle">JQuery</td>
+<td class="text-center align-middle">3.6.4</td>
+</tr>
+<tr>
+<td class="text-center align-middle">Popper</td>
+<td class="text-center align-middle">2.11.17</td>
+</tr>
+<tr>
+<td class="text-center align-middle">Bootstrap</td>
+<td class="text-center align-middle">5.2.3</td>
+</tr>
+<tr>
+<td class="text-center align-middle">Highlight</td>
+<td class="text-center align-middle">11.8.0</td>
+</tr>
+<tr>
+<td class="text-center align-middle">FontAwesome</td>
+<td class="text-center align-middle">6.4.0</td>
+</tr>
+</tbody>
+</table>
+<p><i><b>*</b> Note: These dependencies are already included in the code and imported as needed.</i></p>
+<h1 class="mb-4 text-center">Known Issues:</h1>
+<p>The application currently does not verify the integrity of sections.js, which could potentially lead to errors if the file is not properly formatted.
+While the nested tree structure of the sections array is flexible and allows for easy customization, it does not verify the integrity of the tree structure and its respective direct URLs. If the structure or URLs are incorrect, this could result in errors when loading pages.
+The application also does not validate the integrity of each HTML file loaded, which could potentially result in errors if the file is not properly formatted or if there are issues with the code.
+Currently, the application does not run scripts inside the sections, which may limit functionality for certain use cases.</p>
+</div>
